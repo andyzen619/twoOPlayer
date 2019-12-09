@@ -14,6 +14,6 @@ class Question
 
 end
 
-q1 = Question.new(3, 5)
-puts q1.question
-puts q1.solution
+# q1 = Question.new(3, 5)
+# puts q1.question
+# puts q1.solution

@@ -6,8 +6,9 @@ class Game
   attr_accessor :turn, :endOfGame, :player1, :player2, :questionArr
 
   def initialize()
-    @turn = Turn.new(0)
     @player1 = Player.new('Player 1')
-    @lives = 3
+    @player2 = Player.new('Player 2')
+    @turn = Turn.new(0, this.player1)
+
   end
 end

@@ -16,9 +16,9 @@ class Player
   end
 end
 
-p1 = Player.new("Andy")
-p1.loseLife()
-puts p1.lives
-p1.getInput()
-puts p1.input
+# p1 = Player.new("Andy")
+# p1.loseLife()
+# puts p1.lives
+# p1.getInput()
+# puts p1.input
 
