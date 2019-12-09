@@ -11,7 +11,7 @@ class Game
     @player2 = Player.new('Player 2')
     @turnNumber = 1
     # binding.pry
-    @turn = Turn.new(@turnNumber, @player1, Question.new(rand(1..100), rand(1..100)))
+    @turn = Turn.new(@turnNumber, @player1, Question.new(rand(1..10), rand(1..10)))
     @endOfGame = false
   end
 
@@ -19,9 +19,9 @@ class Game
     self.turnNumber += 1 
 
     if self.turn.player == self.player1
-      self.turn = Turn.new(turnNumber, self.player2, Question.new(rand(1..100), rand(1..100)))
+      self.turn = Turn.new(turnNumber, self.player2, Question.new(rand(1..10), rand(1..10)))
     else 
-      self.turn = Turn.new(turnNumber, self.player1, Question.new(rand(1..100), rand(1..100)))
+      self.turn = Turn.new(turnNumber, self.player1, Question.new(rand(1..10), rand(1..10)))
     end
   end
 
@@ -32,7 +32,15 @@ class Game
     if self.player2.lives <= 0
       self.endOfGame = true
     end
-    puts "#{self.player1}: #{self.player1.lives}/3 vs #{self.player2}: #{self.player2.lives}/3"
+    puts "p1: #{self.player1.lives}/3 vs p2: #{self.player2.lives}/3"
+  end
+
+  def getWinner()
+    if self.player1.lives > self.player2.lives
+      puts "#{self.player1.name} wins with a score of #{self.player1.lives}/3"
+    else
+      puts "#{self.player2.name} wins with a score of #{self.player2.lives}/3"
+    end
   end
 end
 
