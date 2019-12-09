@@ -1,16 +1,16 @@
 require './game'
 
+#Instantiates new game
 game = Game.new();
 
-turns = 1;
-
-while !game.endOfGame && turns < 10
+#Game runs until end of game flag is true
+while !game.endOfGame
   game.turn.askQuestion()
   game.getScore()
-  turns += 1
   game.nextTurn()
   puts "---New Turn---"
 end
 
+#Prints winner and ends game
 game.getWinner()
 puts "---Game Over---"

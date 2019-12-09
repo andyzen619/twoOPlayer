@@ -12,7 +12,7 @@ class Turn
   def askQuestion()
     puts "#{self.player.name}: #{self.question.question}"
     answer = self.player.getInput()
-
+    
     #Decrenents number of lives if answer is wrong
     if answer.to_i != self.question.solution()
       self.player.loseLife()

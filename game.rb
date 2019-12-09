@@ -15,6 +15,7 @@ class Game
     @endOfGame = false
   end
 
+  #Initializes next turn and select the other player as current player
   def nextTurn()
     self.turnNumber += 1 
 
@@ -25,6 +26,7 @@ class Game
     end
   end
 
+  #Prints the score of both players on the screen
   def getScore()
     if self.player1.lives <= 0
       self.endOfGame = true
@@ -35,6 +37,7 @@ class Game
     puts "p1: #{self.player1.lives}/3 vs p2: #{self.player2.lives}/3"
   end
 
+  # Prints the winner of when the game is over
   def getWinner()
     if self.player1.lives > self.player2.lives
       puts "#{self.player1.name} wins with a score of #{self.player1.lives}/3"
@@ -44,13 +47,4 @@ class Game
   end
 end
 
-# g1 = Game.new()
-# puts g1.turn.question.question
-# puts g1.turn.question.solution
-# puts g1.turn.player.name
-
-# g1.nextTurn()
-# puts g1.turn.question.question
-# puts g1.turn.question.solution
-# puts g1.turn.player.name
 
