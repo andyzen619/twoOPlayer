@@ -24,15 +24,25 @@ class Game
       self.turn = Turn.new(turnNumber, self.player1, Question.new(rand(1..100), rand(1..100)))
     end
   end
+
+  def getScore()
+    if self.player1.lives <= 0
+      self.endOfGame = true
+    end
+    if self.player2.lives <= 0
+      self.endOfGame = true
+    end
+    puts "#{self.player1}: #{self.player1.lives}/3 vs #{self.player2}: #{self.player2.lives}/3"
+  end
 end
 
-g1 = Game.new()
-puts g1.turn.question.question
-puts g1.turn.question.solution
-puts g1.turn.player.name
+# g1 = Game.new()
+# puts g1.turn.question.question
+# puts g1.turn.question.solution
+# puts g1.turn.player.name
 
-g1.nextTurn()
-puts g1.turn.question.question
-puts g1.turn.question.solution
-puts g1.turn.player.name
+# g1.nextTurn()
+# puts g1.turn.question.question
+# puts g1.turn.question.solution
+# puts g1.turn.player.name
 
